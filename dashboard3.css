@@ -1,6 +1,6 @@
 .mobile-display{display:none}
 .desktop-display{display:block}
-@media (max-width:1200px){
+@media (max-width:1200px){ 
 .desktop-display {display:none}
 .mobile-display {display:block}
 }
