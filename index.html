@@ -38,11 +38,22 @@
 
 <body>
   <style media="all">
-    .mobile-display{display:none}
-    .desktop-display{display:block}
-    @media (max-width:800px){
-    .desktop-display {display:none}
-    .mobile-display {display:block}
+    .mobile-display {
+      display: none
+    }
+
+    .desktop-display {
+      display: block
+    }
+
+    @media (max-width:800px) {
+      .desktop-display {
+        display: none
+      }
+
+      .mobile-display {
+        display: block
+      }
     }
   </style>
   <div class="desktop-display">
@@ -219,13 +230,24 @@
     </div>
   </div>
   <style media="all">
-    .mobile-display{display:none}
-    .desktop-display{display:block}
-    @media (max-width:800px){
-    .desktop-display {display:none}
-    .mobile-display {display:block}
+    .mobile-display {
+      display: none
     }
-    </style>
+
+    .desktop-display {
+      display: block
+    }
+
+    @media (max-width:800px) {
+      .desktop-display {
+        display: none
+      }
+
+      .mobile-display {
+        display: block
+      }
+    }
+  </style>
   <div class="mobile-display">
 
   </div>
@@ -270,11 +292,11 @@
   <button class="button" style="width: 20%;  margin-left: 10%;" id="go">Go</button>
   <h3 style="margin-left: 27%; margin-bottom:10px"> Installation cost: </h3>
   <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='installationCostM'>
-  <h3 style="margin-left: 20%; margin-bottom:10px"> Available subsidies: </h3>
-  <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='availableSubsidiesM'>
-  <h3 style="margin-left: 27%; margin-bottom:10px"> Cost to you: </h3>
-  <h1 style="margin-left: 17%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYouM'>
-  <canvas id="myChartM" style="width:100%;height:95%"></canvas>
+    <h3 style="margin-left: 20%; margin-bottom:10px"> Available subsidies: </h3>
+    <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='availableSubsidiesM'>
+      <h3 style="margin-left: 27%; margin-bottom:10px"> Cost to you: </h3>
+      <h1 style="margin-left: 17%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYouM'>
+        <canvas id="myChartM" style="width:100%;height:95%"></canvas>
 
 
 
