@@ -527,7 +527,7 @@ var houseID = {
   document.getElementById('installationCostM').innerText = '£' + 2100
   document.getElementById('availableSubsidiesM').innerText = '£' + 0
   document.getElementById('costToYouM').innerText = '£' + 2100
-  
+  const ctx = document.getElementById("myChartM").getContext('2d');
   var baseID = 'terrace20NSTgas'
   var houseType = 'terrace';
   var heatTechnology = 'gas';
@@ -743,7 +743,8 @@ var houseID = {
     solarThermalInst.onclick = function () {
       getCosts()
     }
-    var myChart = new Chart("myChartM", {
+    
+    var myChart = new Chart(ctx, {
       type: "line",
       data: {
         labels: months,
