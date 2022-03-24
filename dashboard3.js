@@ -776,7 +776,7 @@ window.onload = function () {
             display: true,
             labelString: 'Month of the Year',
             
-        fontSize: 24
+        fontSize: 14
           },
           ticks: {
             maxTicksLimit: 12,
