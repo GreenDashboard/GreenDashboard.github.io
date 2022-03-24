@@ -229,82 +229,8 @@
 
     </div>
   </div>
-  <style media="all">
-    .mobile-display {
-      display: none
-    }
 
-    .desktop-display {
-      display: block
-    }
-
-    @media (max-width:800px) {
-      .desktop-display {
-        display: none
-      }
-
-      .mobile-display {
-        display: block
-      }
-    }
-  </style>
-  <div class="mobile-display">
-
-  </div>
-  <img style="width: 32%; margin-left: 1%; margin-top: 5px;" src="/detached_off.png" id="detachedM">
-  <img style="width: 32%;" src="/semidetached_off.png" id="semidetachedM">
-  <img style="width: 32%;" src="/terraced_on.png" id="terracedM">
-  <br>
-  <img style="width: 30%; margin-left: 20%;  margin-right: auto; " src="/2people_on.png" id="2peopleM">
-  <img style="width: 30%; margin-left: auto;  margin-right: auto; " src="/4people_off.png" id="4peopleM">
-  <br>
-
-  <div class="slidecontainer">
-    <h2 style="margin-left: 20%;">Installed Solar PV: <span id="demoM"></span> kWp</h2>
-    <input style="margin-left: 5%;" type="range" min="0" max="5" value="0" step="1" class="rangeslider"
-      id="myRangeM">
-  </div>
-  <br> <br>
-  <h2>&nbsp; PV Panels already installed?
-    <label class="switch" style="width: 60px; float: right;">
-      <input type="checkbox" id="PVInstM">
-      <span class="slider round"></span>
-    </label>
-  </h2>
-  <h2>&nbsp; Solar Thermal
-    <label class="switch" style="width: 60px; float: right;">
-      <input type="checkbox" id="solarThermalM">
-      <span class="slider round"></span>
-    </label>
-  </h2>
-  <h2>&nbsp; ST Panels already installed?
-    <label class="switch" style="width: 60px; float: right;">
-      <input type="checkbox" id="solarThermalInstM">
-      <span class="slider round"></span>
-    </label>
-  </h2>
-  <br><br><br>
-  <br>
-  <img style="width: 35%; margin-left: 15%;" src="/ashp_off.png" id="ashpM">
-  <img style="width: 35%; " src="/gasboiler_on.png" id="gasM">
-  <br>
-  <br>
-  <button id="myBtnM" class="button" style="width: 30%;  margin-left: 18%; background-color: #003f5c;">Info</button>
-  <button class="button" style="width: 20%;  margin-left: 10%;" id="goM">Go</button>
-  <h3 style="margin-left: 27%; margin-bottom:10px"> Installation cost: </h3>
-  <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='installationCostM'>
-    <h3 style="margin-left: 20%; margin-bottom:10px"> Available subsidies: </h3>
-    <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='availableSubsidiesM'>
-      <h3 style="margin-left: 27%; margin-bottom:10px"> Cost to you: </h3>
-      <h1 style="margin-left: 17%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYouM'>
-<div>
-  <canvas id="myChartM"></canvas>
-</div>
-        
-        <canvas id="5YearM" style="width:100%;height:95%"></canvas>
-        <!--<script src='dashMobile.js'></script>-->
-        
-        <script src='dash.js'></script>
+  
 </body>
 
 </html>
