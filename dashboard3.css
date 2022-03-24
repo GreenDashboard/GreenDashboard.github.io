@@ -8,7 +8,7 @@
 .parent {
   display: grid;
   grid-template-columns: 28% 28% 14% repeat(2, 7%) 14%;
-  grid-template-rows: 18% repeat(2, 40%);
+  grid-template-rows: 15% repeat(2, 42%);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   }
