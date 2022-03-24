@@ -781,7 +781,7 @@ window.onload = function () {
           ticks: {
             maxTicksLimit: 12,
             
-            fontSize: 18
+            fontSize: 12
           },
         },
         ]
