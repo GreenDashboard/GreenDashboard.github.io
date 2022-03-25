@@ -1049,7 +1049,12 @@ window.onload = function () {
     return houseConditions
   }
   terracedImageM.click();
+  detachedImageM.click();
+  semidetachedImageM.click();
+  ashpImageM.click();
   gasBolierImageM.click();
+  peopleNumber2M.click();
+  peopleNumber4M.click();
   function getCostsM() {
     installationCost = 0
     availableSubsidies = 0
