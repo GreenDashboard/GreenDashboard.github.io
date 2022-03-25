@@ -542,9 +542,15 @@ var PVInstM = document.getElementById('PVInstM');
 var peopleNumber2M = document.getElementById('2peopleM');
 var peopleNumber4M = document.getElementById('4peopleM');
 var goButtonM = document.getElementById('goM');
-
 var rangeSliderM = document.getElementById("myRangeM");
 var outputM = document.getElementById("demoM");
+detachedImageM.click();
+semidetachedImageM.click();
+terracedImageM.click();
+ashpImageM.click();
+gasBolierImageM.click();
+peopleNumber4M.click();
+peopleNumber2M.click();
 
 
 
@@ -1021,13 +1027,7 @@ window.onload = function () {
     newSrc = pathBegin.concat(add.concat(pathEnd))
   }
 
-  detachedImageM.click();
-  semidetachedImageM.click();
-  terracedImageM.click();
-  ashpImageM.click();
-  gasBolierImageM.click();
-  peopleNumber4M.click();
-  peopleNumber2M.click();
+  
   function getCostsM() {
     installationCost = 0
     availableSubsidies = 0
