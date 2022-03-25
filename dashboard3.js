@@ -1021,13 +1021,13 @@ window.onload = function () {
     newSrc = pathBegin.concat(add.concat(pathEnd))
   }
 
-  terracedImageM.click();
   detachedImageM.click();
   semidetachedImageM.click();
+  terracedImageM.click();
   ashpImageM.click();
   gasBolierImageM.click();
-  peopleNumber2M.click();
   peopleNumber4M.click();
+  peopleNumber2M.click();
   function getCostsM() {
     installationCost = 0
     availableSubsidies = 0
