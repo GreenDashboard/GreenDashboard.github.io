@@ -38,27 +38,27 @@
 
 <body>
   <div class=desktop-display>
-      <style media="all">
-        .mobile-display {
+    <style media="all">
+      .mobile-display {
+        display: none
+      }
+
+      .desktop-display {
+        display: grid
+      }
+
+      @media (max-width:600px) {
+        .desktop-display {
           display: none
         }
 
-        .desktop-display {
+        .mobile-display {
           display: grid
         }
-
-        @media (max-width:6000px) {
-          .desktop-display {
-            display: none
-          }
-
-          .mobile-display {
-            display: grid
-          }
-        }
-      </style>
+      }
+    </style>
     <div class="parent">
-    
+
       <div class="div12"> </div>
       <div class="div1">
         <img style="width: 100%;  margin-left: auto;  margin-right: auto; " src="images/terrace.png" id="house">
@@ -81,26 +81,25 @@
           <input style="margin-left: 5%;" type="range" min="0" max="5" value="0" step="1" class="rangeslider"
             id="myRange">
         </div>
-        <br> <br>
-        <h2>&nbsp; PV Panels already installed?
+        <br>
+        <h4>&nbsp; PV Panels already installed?
           <label class="switch" style="width: 60px; float: right;">
             <input type="checkbox" id="PVInst">
             <span class="slider round"></span>
           </label>
-        </h2>
-        <h2>&nbsp; Solar Thermal
+        </h4>
+        <h4>&nbsp; Solar Thermal
           <label class="switch" style="width: 60px; float: right;">
             <input type="checkbox" id="solarThermal">
             <span class="slider round"></span>
           </label>
-        </h2>
-        <h2>&nbsp; ST Panels already installed?
+        </h4>
+        <h4>&nbsp; ST Panels already installed?
           <label class="switch" style="width: 60px; float: right;">
             <input type="checkbox" id="solarThermalInst">
             <span class="slider round"></span>
           </label>
-        </h2>
-        <br>
+        </h4>
         <br>
         <img style="width: 35%; margin-left: 15%;" src="images/ashp_off.png" id="ashp">
         <img style="width: 35%; " src="images/gasboiler_on.png" id="gas">
@@ -232,31 +231,32 @@
 
     </div>
   </div>
-    <style media="all">
-      .mobile-display {
+  <style media="all">
+    .mobile-display {
+      display: none
+    }
+
+    .desktop-display {
+      display: grid
+    }
+
+    @media (max-width:600px) {
+      .desktop-display {
         display: none
       }
 
-      .desktop-display {
-        display: grid
+      .mobile-display {
+        display: block
       }
+    }
+  </style>
 
-      @media (max-width:6000px) {
-        .desktop-display {
-          display: none
-        }
+  <body>
 
-        .mobile-display {
-          display: block
-        }
-      }
-    </style>
-    <body>
-      
-    
+
     <div class=mobile-display>
-    
-    
+
+
       <img style="width: 32%; margin-left: 1%; margin-top: 5px;" src="images/detached_off.png" id="detachedM">
       <img style="width: 32%;" src="images/semidetached_off.png" id="semidetachedM">
       <img style="width: 32%;" src="images/terraced_on.png" id="terracedM">
@@ -269,7 +269,7 @@
         <input style="margin-left: 5%;" type="range" min="0" max="5" value="0" step="1" class="rangeslider"
           id="myRangeM">
       </div>
-      <br> <br>
+      <br> 
       <h2>&nbsp; PV Panels already installed?
         <label class="switch" style="width: 60px; float: right;">
           <input type="checkbox" id="PVInstM">
@@ -289,13 +289,10 @@
         </label>
       </h2>
       <br>
-      <br>
       <img style="width: 35%; margin-left: 15%;" src="images/ashp_off.png" id="ashpM">
       <img style="width: 35%; " src="images/gasboiler_on.png" id="gasM">
       <br>
-      <br>
-      <button id="myBtn" class="button"
-        style="width: 30%;  margin-left: 18%; background-color: #003f5c;">Info</button>
+      <button id="myBtn" class="button" style="width: 30%;  margin-left: 18%; background-color: #003f5c;">Info</button>
       <button class="button" style="width: 20%;  margin-left: 10%;" id="goM">Go</button>
 
       <h3 style="margin-left: 27%; margin-bottom:10px"> Installation cost: </h3>
@@ -312,14 +309,15 @@
 
 
 
-  
 
 
 
 
-  <script src='dashMobile.js'></script>
+
+    <script src='dashMobile.js'></script>
+
+  </body>
   <script src='dashboard3.js'></script>
-</body>
 </body>
 
 </html>
