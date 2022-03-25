@@ -641,7 +641,6 @@ window.onload = function () {
       }
     }
     if (heatTechnology == 'ashp') {
-      console.log(people)
       installationCost += costs['ashp'][people];
       availableSubsidies += costs['ashp'][people];
 
@@ -948,7 +947,6 @@ window.onload = function () {
     } else {
       houseType = 'terrace'
     }
-
     baseID = houseType + people + "0NSTgas"
     chart.data.datasets = [{
       label: 'Gas Boiler Only',
@@ -1022,32 +1020,7 @@ window.onload = function () {
     pathEnd = '.png'
     newSrc = pathBegin.concat(add.concat(pathEnd))
   }
-  getHouseID = function () {
 
-
-    if (peopleNumber4.getAttribute('src') == '/4people_on.png') {
-      people = '4';
-    } else {
-      people = '2';
-    }
-    if (detachedImageM.getAttribute('src') == '/detached_on.png') {
-      houseType = 'detached'
-    } else if (semidetachedImageM.getAttribute('src') == '/semidetached_on.png') {
-      houseType = 'semidetached'
-    } else {
-      houseType = 'terrace'
-    }
-    solarPV = rangeSliderM.value;
-
-    if (solarThermalM.checked) {
-      St = 'ST';
-    } else {
-      St = 'NST';
-    }
-
-    let houseConditions = houseType.concat(people.concat(solarPV.concat(St.concat(heatTechnology))))
-    return houseConditions
-  }
   terracedImageM.click();
   detachedImageM.click();
   semidetachedImageM.click();
@@ -1083,7 +1056,6 @@ window.onload = function () {
       }
     }
     if (heatTechnology == 'ashp') {
-      console.log(people)
       installationCost += costs['ashp'][people];
       availableSubsidies += costs['ashp'][people];
 
@@ -1095,9 +1067,6 @@ window.onload = function () {
     availableSubsidies = Math.min(5000, 0.66*availableSubsidies)
 
     costToYou = installationCost - availableSubsidies
-    console.log(costToYou)
-    console.log(installationCost)
-    console.log(availableSubsidies)
     document.getElementById('installationCostM').innerText = '£' + Math.floor(installationCost)
     document.getElementById('availableSubsidiesM').innerText = '£' + Math.floor(availableSubsidies)
     document.getElementById('costToYouM').innerText = '£' + Math.floor(costToYou)
