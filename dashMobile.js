@@ -512,17 +512,17 @@ var houseID = {
     "household_167": [13817.754, 29662.139, 36184.3315, 9394.59732, 32881.09062, 44624.33727]
   }
   
-  var ashpImage = document.getElementById('ashpM');
-  var gasBolierImage = document.getElementById('gasM');
-  var detachedImage = document.getElementById('detachedM');
-  var semidetachedImage = document.getElementById('semidetachedM');
-  var terracedImage = document.getElementById('terracedM');
-  var solarThermal = document.getElementById('solarThermalM');
-  var solarThermalInst = document.getElementById('solarThermalInstM');
-  var PVInst = document.getElementById('PVInstM');
-  var peopleNumber2 = document.getElementById('2peopleM');
-  var peopleNumber4 = document.getElementById('4peopleM');
-  var goButton = document.getElementById('goM');
+  var ashpImageM = document.getElementById('ashpM');
+  var gasBolierImageM = document.getElementById('gasM');
+  var detachedImageM = document.getElementById('detachedM');
+  var semidetachedImageM = document.getElementById('semidetachedM');
+  var terracedImageM = document.getElementById('terracedM');
+  var solarThermalM = document.getElementById('solarThermalM');
+  var solarThermalInstM = document.getElementById('solarThermalInstM');
+  var PVInstM = document.getElementById('PVInstM');
+  var peopleNumber2M = document.getElementById('2peopleM');
+  var peopleNumber4M = document.getElementById('4peopleM');
+  var goButtonM = document.getElementById('goM');
   document.getElementById('installationCostM').innerText = '£' + 2100
   document.getElementById('availableSubsidiesM').innerText = '£' + 0
   document.getElementById('costToYouM').innerText = '£' + 2100
@@ -530,8 +530,8 @@ var houseID = {
   var houseType = 'terrace';
   var heatTechnology = 'gas';
   var peopleNumber = '2'
-  var rangeSlider = document.getElementById("myRangeM");
-  var output = document.getElementById("demoM");
+  var rangeSliderM = document.getElementById("myRangeM");
+  var outputM = document.getElementById("demoM");
   window.onload = function () {
   
     const costs = {
@@ -550,9 +550,9 @@ var houseID = {
       'gas': 2100,
     }
   
-    output.innerHTML = rangeSlider.value;
-    rangeSlider.oninput = function () {
-      output.innerHTML = this.value;
+    outputM.innerHTML = rangeSlider.value;
+    rangeSliderM.oninput = function () {
+      outputM.innerHTML = this.value;
       pathBegin = '/terrace_PV';
       if (solarThermal.checked) {
         pathBegin = '/terrace_ST';
@@ -570,16 +570,16 @@ var houseID = {
       } else {
         people = '2';
       }
-      if (detachedImage.getAttribute('src') == '/detached_on.png') {
+      if (detachedImageM.getAttribute('src') == '/detached_on.png') {
         houseType = 'detached'
-      } else if (semidetachedImage.getAttribute('src') == '/semidetached_on.png') {
+      } else if (semidetachedImageM.getAttribute('src') == '/semidetached_on.png') {
         houseType = 'semidetached'
       } else {
         houseType = 'terrace'
       }
-      solarPV = rangeSlider.value;
+      solarPV = rangeSliderM.value;
   
-      if (solarThermal.checked) {
+      if (solarThermalM.checked) {
         St = 'ST';
       } else {
         St = 'NST';
@@ -593,25 +593,25 @@ var houseID = {
       installationCost = 0
       availableSubsidies = 0
       installedDiscount = 0
-      if (peopleNumber4.getAttribute('src') == '/4people_on.png') {
+      if (peopleNumber4M.getAttribute('src') == '/4people_on.png') {
         people = '4';
       } else {
         people = '2';
       }
-      solarPV = rangeSlider.value;
+      solarPV = rangeSliderM.value;
   
-      if (solarThermal.checked) {
+      if (solarThermalM.checked) {
         installationCost += costs['solar thermal installation'];
         availableSubsidies += costs['solar thermal installation'];
-        if (solarThermalInst.checked) {
+        if (solarThermalInstM.checked) {
           installationCost -= costs['solar thermal installation'];
           availableSubsidies -= costs['solar thermal installation'];
           installedDiscount += costs['solar thermal installation']
         }
       }
-      if (rangeSlider.value > 0) {
+      if (rangeSliderM.value > 0) {
         installationCost += costs['solarPV'][rangeSlider.value];
-        if (PVInst.checked) {
+        if (PVInstM.checked) {
           installationCost -= costs['solarPV'][rangeSlider.value];
           installedDiscount += costs['solarPV'][rangeSlider.value]
         }
@@ -636,105 +636,104 @@ var houseID = {
     }
   
   
-    solarThermal.onclick = function () {
+    solarThermalM.onclick = function () {
       getCosts()
       solarValue = rangeSlider.value;
       pathBegin = '/terrace_PV';
-      if (solarThermal.checked) {
+      if (solarThermalM.checked) {
         pathBegin = '/terrace_ST';
-        solarThermalInst.enabled
+        solarThermalInstM.enabled
       } else {
-        solarThermalInst.disabled
+        solarThermalInstM.disabled
       }
       add = Math.ceil(solarValue / 2).toString()
       pathEnd = '.png'
       newSrc = pathBegin.concat(add.concat(pathEnd))
   
     }
-    detachedImage.onclick = function () {
+    detachedImageM.onclick = function () {
       getCosts()
-      var mySrc = detachedImage.getAttribute('src');
+      var mySrc = detachedImageM.getAttribute('src');
       if (mySrc === '/detached_off.png') {
-        detachedImage.setAttribute('src', '/detached_on.png');
+        detachedImageM.setAttribute('src', '/detached_on.png');
         houseType = 'detached';
       }
-      semidetachedImage.setAttribute('src', '/semidetached_off.png')
-      terracedImage.setAttribute('src', '/terraced_off.png')
+      semidetachedImageM.setAttribute('src', '/semidetached_off.png')
+      terracedImageM.setAttribute('src', '/terraced_off.png')
     }
-    semidetachedImage.onclick = function () {
-      var mySrc = semidetachedImage.getAttribute('src');
+    semidetachedImageM.onclick = function () {
+      var mySrc = semidetachedImageM.getAttribute('src');
       if (mySrc === '/semidetached_off.png') {
-        semidetachedImage.setAttribute('src', '/semidetached_on.png');
+        semidetachedImageM.setAttribute('src', '/semidetached_on.png');
         houseType = 'semidetached';
       }
-      detachedImage.setAttribute('src', '/detached_off.png')
-      terracedImage.setAttribute('src', '/terraced_off.png')
+      detachedImageM.setAttribute('src', '/detached_off.png')
+      terracedImageM.setAttribute('src', '/terraced_off.png')
       getCosts()
     }
-    terracedImage.onclick = function () {
-      var mySrc = terracedImage.getAttribute('src');
+    terracedImageM.onclick = function () {
+      var mySrc = terracedImageM.getAttribute('src');
       if (mySrc === '/terraced_off.png') {
-        terracedImage.setAttribute('src', '/terraced_on.png');
+        terracedImageM.setAttribute('src', '/terraced_on.png');
         houseType = 'terraced';
       }
-      detachedImage.setAttribute('src', '/detached_off.png')
-      semidetachedImage.setAttribute('src', '/semidetached_off.png')
+      detachedImageM.setAttribute('src', '/detached_off.png')
+      semidetachedImageM.setAttribute('src', '/semidetached_off.png')
       getCosts()
     }
   
-    ashpImage.onclick = function () {
-      var mySrc = ashpImage.getAttribute('src');
+    ashpImageM.onclick = function () {
+      var mySrc = ashpImageM.getAttribute('src');
       if (mySrc === '/ashp_off.png') {
-        ashpImage.setAttribute('src', '/ashp_on.png');
+        ashpImageM.setAttribute('src', '/ashp_on.png');
         heatTechnology = 'ashp';
       }
-      gasBolierImage.setAttribute('src', '/gasboiler_off.png')
+      gasBolierImageM.setAttribute('src', '/gasboiler_off.png')
       getCosts()
     }
   
-    gasBolierImage.onclick = function () {
-      var mySrc = gasBolierImage.getAttribute('src');
+    gasBolierImageM.onclick = function () {
+      var mySrc = gasBolierImageM.getAttribute('src');
       if (mySrc === '/gasboiler_off.png') {
-        gasBolierImage.setAttribute('src', '/gasboiler_on.png');
+        gasBolierImageM.setAttribute('src', '/gasboiler_on.png');
         heatTechnology = 'gas';
       }
-      ashpImage.setAttribute('src', '/ashp_off.png')
+      ashpImageM.setAttribute('src', '/ashp_off.png')
       getCosts()
     }
   
-    peopleNumber2.onclick = function () {
-      var mySrc = peopleNumber2.getAttribute('src');
+    peopleNumber2M.onclick = function () {
+      var mySrc = peopleNumber2M.getAttribute('src');
       if (mySrc === '/2people_off.png') {
-        peopleNumber2.setAttribute('src', '/2people_on.png');
+        peopleNumber2M.setAttribute('src', '/2people_on.png');
         peopleNumber = '2';
       }
-      peopleNumber4.setAttribute('src', '/4people_off.png')
+      peopleNumber4M.setAttribute('src', '/4people_off.png')
       getCosts()
     }
   
-    peopleNumber4.onclick = function () {
-      var mySrc = peopleNumber4.getAttribute('src');
+    peopleNumber4M.onclick = function () {
+      var mySrc = peopleNumber4M.getAttribute('src');
       if (mySrc === '/4people_off.png') {
-        peopleNumber4.setAttribute('src', '/4people_on.png');
+        peopleNumber4M.setAttribute('src', '/4people_on.png');
         peopleNumber = '4';
       }
-      peopleNumber2.setAttribute('src', '/2people_off.png')
+      peopleNumber2M.setAttribute('src', '/2people_off.png')
       getCosts()
     }
   
-    goButton.onclick = function () {
-      getCosts()
-      updatePlots()
-    }
-  
-    rangeSlider.onclick = function () {
+    goButtonM.onclick = function () {
       getCosts()
     }
   
-    PVInst.onclick = function () {
+    rangeSliderM.onclick = function () {
       getCosts()
     }
-    solarThermalInst.onclick = function () {
+  
+    PVInstM.onclick = function () {
+      getCosts()
+    }
+    solarThermalInstM.onclick = function () {
       getCosts()
     }
   

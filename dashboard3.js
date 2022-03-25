@@ -530,6 +530,7 @@ document.getElementById('costToYou').innerText = '£' + 2100
 document.getElementById('installationCostM').innerText = '£' + 2100
 document.getElementById('availableSubsidiesM').innerText = '£' + 0
 document.getElementById('costToYouM').innerText = '£' + 2100
+document.getElementById('costToYou20M').innerText = '£' + 0
 var ashpImageM = document.getElementById('ashpM');
 var gasBolierImageM = document.getElementById('gasM');
 var detachedImageM = document.getElementById('detachedM');
@@ -1184,10 +1185,6 @@ window.onload = function () {
     getCostsM()
   }
 
-  goButtonM.onclick = function () {
-    getCostsM()
-  }
-
   rangeSliderM.onclick = function () {
     getCostsM()
   }
@@ -1227,6 +1224,31 @@ window.onclick = function (event) {
   }
 }
 
+// Get the modal
+var modalM = document.getElementById("myModalM");
+
+// Get the button that opens the modal
+var btnM = document.getElementById("myBtnM");
+
+// Get the <span> element that closes the modal
+var spanM = document.getElementsByClassName("close")[1];
+
+// When the user clicks on the button, open the modal
+btnM.onclick = function () {
+  modalM.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanM.onclick = function () {
+  modalM.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modalM) {
+    modalM.style.display = "none";
+  }
+}
 var months = [
   "January",
   "January",
