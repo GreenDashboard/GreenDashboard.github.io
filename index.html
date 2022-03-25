@@ -37,27 +37,28 @@
 </head>
 
 <body>
-  <div class="parent">
-    <div class=desktop-display>
+  <div class=desktop-display>
       <style media="all">
         .mobile-display {
           display: none
         }
 
         .desktop-display {
-          display: block
+          display: grid
         }
 
-        @media (max-width:800px) {
+        @media (max-width:600px) {
           .desktop-display {
             display: none
           }
 
           .mobile-display {
-            display: block
+            display: grid
           }
         }
       </style>
+    <div class="parent">
+    
       <div class="div12"> </div>
       <div class="div1">
         <img style="width: 100%;  margin-left: auto;  margin-right: auto; " src="images/terrace.png" id="house">
@@ -230,16 +231,17 @@
       <div class="div10"></div>
 
     </div>
+    <div class=mobile-display>
     <style media="all">
       .mobile-display {
         display: none
       }
 
       .desktop-display {
-        display: block
+        display: grid
       }
 
-      @media (max-width:device-width) {
+      @media (max-width:600px) {
         .desktop-display {
           display: none
         }
@@ -249,7 +251,7 @@
         }
       }
     </style>
-    <div class=mobile-display>
+    
       <img style="width: 32%; margin-left: 1%; margin-top: 5px;" src="images/detached_off.png" id="detachedM">
       <img style="width: 32%;" src="images/semidetached_off.png" id="semidetachedM">
       <img style="width: 32%;" src="images/terraced_on.png" id="terracedM">
