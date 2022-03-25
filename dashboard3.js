@@ -1026,7 +1026,181 @@ window.onload = function () {
     pathEnd = '.png'
     newSrc = pathBegin.concat(add.concat(pathEnd))
   }
+  var barData5M = {
+    labels: ["Total Cost", "Total Carbon Emissions"],
+    datasets: [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: '#ffa600',
+        data: [costCarbon[houseID[baseID]][0], costCarbon[houseID[baseID]][3]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: '#003f5c',
+        data: [costCarbon[houseID[baseID]][0], costCarbon[houseID[baseID]][3]]
+      },
+    ]
+  };
 
+  var barData10M = {
+    labels: ["Total Cost", "Total Carbon Emissions"],
+    datasets: [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: "#ffa600",
+        data: [costCarbon[houseID[baseID]][1], costCarbon[houseID[baseID]][4]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: "#003f5c",
+        data: [costCarbon[houseID[baseID]][1], costCarbon[houseID[baseID]][4]]
+      },
+    ]
+  };
+
+  var barData20M = {
+    labels: ["Total Cost", "Total Carbon Emissions"],
+    datasets: [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: "#ffa600",
+        data: [costCarbon[houseID[baseID]][2], costCarbon[houseID[baseID]][5]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: "#003f5c",
+        data: [costCarbon[houseID[baseID]][2], costCarbon[houseID[baseID]][5]]
+      },
+    ]
+  };
+
+  var barChart5 = new Chart("5YearM", {
+    type: 'bar',
+    data: barData5,
+    options: {
+      barValueSpacing: 20,
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            scaleLabel: {
+              display: true,
+              labelString: 'Cost (£)'
+            }
+          }
+        }]
+      },
+
+      title: {
+        display: true,
+        text: "Total Cost and Carbon Emissions Over 5 Years",
+        fontSize: 16
+      }
+    }
+  });
+
+  var barChart10 = new Chart("10YearM", {
+    type: 'bar',
+    data: barData10,
+    options: {
+      barValueSpacing: 20,
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+          }
+        }]
+      },
+      title: {
+        display: true,
+        text: "Total Cost and Carbon Emissions Over 10 Years",
+        fontSize: 16
+      },
+    }
+  });
+
+  var barChart20 = new Chart("20YearM", {
+    type: 'bar',
+    data: barData20,
+    options: {
+      barValueSpacing: 20,
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+          }
+        }]
+      },
+      title: {
+        display: true,
+        text: "Total Cost and Carbon Emissions Over 20 Years",
+        fontSize: 16
+      },
+    }
+  });
+  function updatePlots() {
+    updateBarChart(barChart5M, barChart10M, barChart20M)
+
+
+  }
+  
+  function updateBarChart(chart1, chart2, chart3) {
+    discount = getCosts()
+    chart1.data.datasets = [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: '#ffa600',
+        data: [costCarbon[houseID[baseID]][0] - discount, costCarbon[houseID[baseID]][3]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: '#003f5c',
+        data: [costCarbon[houseID[getHouseID()]][0] - discount, costCarbon[houseID[getHouseID()]][3]]
+      },
+    ]
+    chart1.update();
+    chart2.data.datasets = [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: '#ffa600',
+        data: [costCarbon[houseID[baseID]][1] - discount, costCarbon[houseID[baseID]][4]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: '#003f5c',
+        data: [costCarbon[houseID[getHouseID()]][1] - discount, costCarbon[houseID[getHouseID()]][4]]
+      },
+    ]
+    chart2.update();
+    chart3.data.datasets = [
+      {
+        label: "Gas Boiler Only",
+        backgroundColor: '#ffa600',
+        data: [costCarbon[houseID[baseID]][2] - discount, costCarbon[houseID[baseID]][5]]
+      },
+      {
+        label: "Your Solution",
+        backgroundColor: '#003f5c',
+        data: [costCarbon[houseID[getHouseID()]][2] - discount, costCarbon[houseID[getHouseID()]][5]]
+      },
+    ]
+    chart3.update();
+  }
+
+
+  document.getElementById("5 YearsM").click();
+  outputM.innerHTML = rangeSliderM.value;
+  rangeSliderM.oninput = function () {
+    outputM.innerHTML = this.value;
+    pathBegin = '/terrace_PV';
+    if (solarThermal.checked) {
+      pathBegin = '/terrace_ST';
+    }
+
+    add = Math.ceil(this.value / 2).toString()
+    pathEnd = '.png'
+    newSrc = pathBegin.concat(add.concat(pathEnd))
+  }
   
   function getCostsM() {
     installationCost = 0
@@ -1616,6 +1790,28 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 
+document.getElementById("5 YearsM").click();
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpenM").click();
 
 
 
