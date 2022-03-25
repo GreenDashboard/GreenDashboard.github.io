@@ -514,7 +514,6 @@ var houseID = {
   
   var ashpImage = document.getElementById('ashpM');
   var gasBolierImage = document.getElementById('gasM');
-  var houseImage = document.getElementById('houseM');
   var detachedImage = document.getElementById('detachedM');
   var semidetachedImage = document.getElementById('semidetachedM');
   var terracedImage = document.getElementById('terracedM');
@@ -527,7 +526,6 @@ var houseID = {
   document.getElementById('installationCostM').innerText = '£' + 2100
   document.getElementById('availableSubsidiesM').innerText = '£' + 0
   document.getElementById('costToYouM').innerText = '£' + 2100
-  const ctx = document.getElementById("myChartM").getContext('2d');
   var baseID = 'terrace20NSTgas'
   var houseType = 'terrace';
   var heatTechnology = 'gas';
@@ -556,7 +554,6 @@ var houseID = {
     rangeSlider.oninput = function () {
       output.innerHTML = this.value;
       pathBegin = '/terrace_PV';
-      var mySrc = houseImage.getAttribute('src');
       if (solarThermal.checked) {
         pathBegin = '/terrace_ST';
       }
@@ -564,7 +561,6 @@ var houseID = {
       add = Math.ceil(this.value / 2).toString()
       pathEnd = '.png'
       newSrc = pathBegin.concat(add.concat(pathEnd))
-      houseImage.setAttribute('src', newSrc)
     }
     getHouseID = function () {
   
@@ -644,7 +640,6 @@ var houseID = {
       getCosts()
       solarValue = rangeSlider.value;
       pathBegin = '/terrace_PV';
-      var mySrc = houseImage.getAttribute('src');
       if (solarThermal.checked) {
         pathBegin = '/terrace_ST';
         solarThermalInst.enabled
@@ -654,7 +649,6 @@ var houseID = {
       add = Math.ceil(solarValue / 2).toString()
       pathEnd = '.png'
       newSrc = pathBegin.concat(add.concat(pathEnd))
-      houseImage.setAttribute('src', newSrc)
   
     }
     detachedImage.onclick = function () {
@@ -743,282 +737,13 @@ var houseID = {
     solarThermalInst.onclick = function () {
       getCosts()
     }
-    
-    var myChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: months,
-        datasets: [{
-          label: 'Gas Boiler Only',
-          fill: false,
-          backgroundColor: "#ffa600",
-          borderColor: "#ffa600",
-          data: houseCosts['household_1']
-        }]
-      },
-      options: {
-        elements: {
-          point: {
-            radius: 0
-          }
-        },
-        legend: { display: true },
-        scales: {
-          yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'Cost (p)',
-              
-          fontSize: 24
-            }
-          }],
-          xAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'Month of the Year',
-              
-          fontSize: 24
-            },
-            ticks: {
-              maxTicksLimit: 12,
-              
-              fontSize: 18
-            },
-          },
-          ]
-        },
-        title: {
-          display: true,
-          text: "Average Daily Cost of Energy",
-          fontSize: 32
-        },
-  
-      }
-    });
-  
-  
-  
-    var barData5 = {
-      labels: ["Total Cost", "Total Carbon Emissions"],
-      datasets: [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: '#ffa600',
-          data: [costCarbon[houseID[baseID]][0], costCarbon[houseID[baseID]][3]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: '#003f5c',
-          data: [costCarbon[houseID[baseID]][0], costCarbon[houseID[baseID]][3]]
-        },
-      ]
-    };
-  
-    var barData10 = {
-      labels: ["Total Cost", "Total Carbon Emissions"],
-      datasets: [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: "#ffa600",
-          data: [costCarbon[houseID[baseID]][1], costCarbon[houseID[baseID]][4]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: "#003f5c",
-          data: [costCarbon[houseID[baseID]][1], costCarbon[houseID[baseID]][4]]
-        },
-      ]
-    };
-  
-    var barData20 = {
-      labels: ["Total Cost", "Total Carbon Emissions"],
-      datasets: [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: "#ffa600",
-          data: [costCarbon[houseID[baseID]][2], costCarbon[houseID[baseID]][5]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: "#003f5c",
-          data: [costCarbon[houseID[baseID]][2], costCarbon[houseID[baseID]][5]]
-        },
-      ]
-    };
-  
-    var barChart5 = new Chart("5YearM", {
-      type: 'bar',
-      data: barData5,
-      options: {
-        barValueSpacing: 20,
-        scales: {
-          yAxes: [{
-            ticks: {
-              min: 0,
-              scaleLabel: {
-                display: true,
-                labelString: 'Cost (£)'
-              }
-            }
-          }]
-        },
-  
-        title: {
-          display: true,
-          text: "Total Cost and Carbon Emissions Over 5 Years",
-          fontSize: 16
-        }
-      }
-    });
-  
-    var barChart10 = new Chart("10YearM", {
-      type: 'bar',
-      data: barData10,
-      options: {
-        barValueSpacing: 20,
-        scales: {
-          yAxes: [{
-            ticks: {
-              min: 0,
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Total Cost and Carbon Emissions Over 10 Years",
-          fontSize: 16
-        },
-      }
-    });
-  
-    var barChart20 = new Chart("20YearM", {
-      type: 'bar',
-      data: barData20,
-      options: {
-        barValueSpacing: 20,
-        scales: {
-          yAxes: [{
-            ticks: {
-              min: 0,
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Total Cost and Carbon Emissions Over 20 Years",
-          fontSize: 16
-        },
-      }
-    });
-    function updatePlots() {
-      addData(myChart)
-      updateBarChart(barChart5, barChart10, barChart20)
-  
-  
-    }
-    function addData(chart) {
-      if (peopleNumber4.getAttribute('src') == '/4people_on.png') {
-        people = '4';
-      } else {
-        people = '2';
-      }
-      if (detachedImage.getAttribute('src') == '/detached_on.png') {
-        houseType = 'detached'
-      } else if (semidetachedImage.getAttribute('src') == '/semidetached_on.png') {
-        houseType = 'semidetached'
-      } else {
-        houseType = 'terrace'
-      }
-  
-      baseID = houseType + people + "0NSTgas"
-      chart.data.datasets = [{
-        label: 'Gas Boiler Only',
-        fill: false,
-        backgroundColor: "#ffa600",
-        borderColor: "#ffa600",
-        data: houseCosts[houseID[baseID]]
-      }, {
-        label: 'Your Solution',
-        fill: false,
-        backgroundColor: "#003f5c",
-        borderColor: "#003f5c",
-        data: houseCosts[houseID[getHouseID()]]
-      }]
-      chart.update();
-    }
-    function updateBarChart(chart1, chart2, chart3) {
-      discount = getCosts()
-      chart1.data.datasets = [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: '#ffa600',
-          data: [costCarbon[houseID[baseID]][0] - discount, costCarbon[houseID[baseID]][3]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: '#003f5c',
-          data: [costCarbon[houseID[getHouseID()]][0] - discount, costCarbon[houseID[getHouseID()]][3]]
-        },
-      ]
-      chart1.update();
-      chart2.data.datasets = [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: '#ffa600',
-          data: [costCarbon[houseID[baseID]][1] - discount, costCarbon[houseID[baseID]][4]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: '#003f5c',
-          data: [costCarbon[houseID[getHouseID()]][1] - discount, costCarbon[houseID[getHouseID()]][4]]
-        },
-      ]
-      chart2.update();
-      chart3.data.datasets = [
-        {
-          label: "Gas Boiler Only",
-          backgroundColor: '#ffa600',
-          data: [costCarbon[houseID[baseID]][2] - discount, costCarbon[houseID[baseID]][5]]
-        },
-        {
-          label: "Your Solution",
-          backgroundColor: '#003f5c',
-          data: [costCarbon[houseID[getHouseID()]][2] - discount, costCarbon[houseID[getHouseID()]][5]]
-        },
-      ]
-      chart3.update();
-    }
   
 
   
   
   };
   
-  // Get the modal
-  var modal = document.getElementById("myModalM");
-  
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtnM");
-  
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks on the button, open the modal
-  btn.onclick = function () {
-    modal.style.display = "block";
-  }
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+
   
   var months = [
     "January",
