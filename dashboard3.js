@@ -1048,7 +1048,8 @@ window.onload = function () {
     let houseConditions = houseType.concat(people.concat(solarPV.concat(St.concat(heatTechnology))))
     return houseConditions
   }
-
+  terracedImageM.click();
+  gasBolierImageM.click();
   function getCostsM() {
     installationCost = 0
     availableSubsidies = 0
