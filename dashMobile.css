@@ -292,3 +292,13 @@
   height: 100%;
   border-left: none;
 }
+
+/* Style the tab content */
+.tabcontentM {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 85%;
+  height: 400px;
+  border-left: none;
+}
