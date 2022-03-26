@@ -1266,6 +1266,7 @@ window.onload = function () {
   detachedImageM.onclick = function () {
     getCostsM()
     var mySrcM = detachedImageM.getAttribute('src');
+    console.log(mySrcM)
     if (mySrcM == '/detached_off.png') {
       detachedImageM.setAttribute('src', '/detached_on.png');
       houseType = 'detached';
