@@ -1278,7 +1278,7 @@ window.onload = function () {
   }
   semidetachedImageM.onclick = function () {
     var mySrcM = semidetachedImageM.getAttribute('src');
-    if (mySrcM == '/semidetached_off.png') {
+    if (mySrcM = '/semidetached_off.png') {
       semidetachedImageM.setAttribute('src', '/semidetached_on.png');
       houseType = 'semidetached';
     }
@@ -1288,7 +1288,7 @@ window.onload = function () {
   }
   terracedImageM.onclick = function () {
     var mySrcM = terracedImageM.getAttribute('src');
-    if (mySrcM == '/terraced_off.png') {
+    if (mySrcM = '/terraced_off.png') {
       terracedImageM.setAttribute('src', '/terraced_on.png');
       houseType = 'terraced';
     }
@@ -1299,7 +1299,7 @@ window.onload = function () {
 
   ashpImageM.onclick = function () {
     var mySrcM = ashpImageM.getAttribute('src');
-    if (mySrcM === '/ashp_off.png') {
+    if (mySrcM = '/ashp_off.png') {
       ashpImageM.setAttribute('src', '/ashp_on.png');
       heatTechnology = 'ashp';
     }
@@ -1309,7 +1309,7 @@ window.onload = function () {
 
   gasBolierImageM.onclick = function () {
     var mySrcM = gasBolierImageM.getAttribute('src');
-    if (mySrcM === '/gasboiler_off.png') {
+    if (mySrcM = '/gasboiler_off.png') {
       gasBolierImageM.setAttribute('src', '/gasboiler_on.png');
       heatTechnology = 'gas';
     }
@@ -1319,7 +1319,7 @@ window.onload = function () {
 
   peopleNumber2M.onclick = function () {
     var mySrc = peopleNumber2M.getAttribute('src');
-    if (mySrc === '/2people_off.png') {
+    if (mySrc = '/2people_off.png') {
       peopleNumber2M.setAttribute('src', '/2people_on.png');
       peopleNumber = '2';
     }
@@ -1329,7 +1329,7 @@ window.onload = function () {
 
   peopleNumber4M.onclick = function () {
     var mySrc = peopleNumber4M.getAttribute('src');
-    if (mySrc === '/4people_off.png') {
+    if (mySrc = '/4people_off.png') {
       peopleNumber4M.setAttribute('src', '/4people_on.png');
       peopleNumber = '4';
     }
