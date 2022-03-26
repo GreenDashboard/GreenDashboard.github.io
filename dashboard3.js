@@ -1791,7 +1791,7 @@ document.getElementById("defaultOpen").click();
 
 
 document.getElementById("5 YearsM").click();
-function openCity(evt, cityName) {
+function openCityM(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
