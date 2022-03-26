@@ -1074,9 +1074,9 @@ window.onload = function () {
     ]
   };
 
-  var barChart5 = new Chart("5YearM", {
+  var barChart5M = new Chart("5YearM", {
     type: 'bar',
-    data: barData5,
+    data: barData5M,
     options: {
       barValueSpacing: 20,
       scales: {
@@ -1099,9 +1099,9 @@ window.onload = function () {
     }
   });
 
-  var barChart10 = new Chart("10YearM", {
+  var barChart10M = new Chart("10YearM", {
     type: 'bar',
-    data: barData10,
+    data: barData10M,
     options: {
       barValueSpacing: 20,
       scales: {
@@ -1119,9 +1119,9 @@ window.onload = function () {
     }
   });
 
-  var barChart20 = new Chart("20YearM", {
+  var barChart20M = new Chart("20YearM", {
     type: 'bar',
-    data: barData20,
+    data: barData20M,
     options: {
       barValueSpacing: 20,
       scales: {
