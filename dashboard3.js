@@ -1262,7 +1262,7 @@ window.onload = function () {
     pathEnd = '.png'
     newSrc = pathBegin.concat(add.concat(pathEnd))
 
-  }
+  }  
   detachedImageM.onclick = function () {
     getCostsM()
     var mySrcM = detachedImageM.getAttribute('src');
