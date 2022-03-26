@@ -1265,8 +1265,8 @@ window.onload = function () {
   }
   detachedImageM.onclick = function () {
     getCostsM()
-    var mySrc = detachedImageM.getAttribute('src');
-    if (mySrc == '/detached_off.png') {
+    var mySrcM = detachedImageM.getAttribute('src');
+    if (mySrcM == '/detached_off.png') {
       detachedImageM.setAttribute('src', '/detached_on.png');
       houseType = 'detached';
     }
@@ -1275,8 +1275,8 @@ window.onload = function () {
     console.log(detachedImageM.getAttribute('src'))
   }
   semidetachedImageM.onclick = function () {
-    var mySrc = semidetachedImageM.getAttribute('src');
-    if (mySrc == '/semidetached_off.png') {
+    var mySrcM = semidetachedImageM.getAttribute('src');
+    if (mySrcM == '/semidetached_off.png') {
       semidetachedImageM.setAttribute('src', '/semidetached_on.png');
       houseType = 'semidetached';
     }
@@ -1285,8 +1285,8 @@ window.onload = function () {
     getCostsM()
   }
   terracedImageM.onclick = function () {
-    var mySrc = terracedImageM.getAttribute('src');
-    if (mySrc == '/terraced_off.png') {
+    var mySrcM = terracedImageM.getAttribute('src');
+    if (mySrcM == '/terraced_off.png') {
       terracedImageM.setAttribute('src', '/terraced_on.png');
       houseType = 'terraced';
     }
@@ -1296,8 +1296,8 @@ window.onload = function () {
   }
 
   ashpImageM.onclick = function () {
-    var mySrc = ashpImageM.getAttribute('src');
-    if (mySrc === '/ashp_off.png') {
+    var mySrcM = ashpImageM.getAttribute('src');
+    if (mySrcM === '/ashp_off.png') {
       ashpImageM.setAttribute('src', '/ashp_on.png');
       heatTechnology = 'ashp';
     }
@@ -1306,8 +1306,8 @@ window.onload = function () {
   }
 
   gasBolierImageM.onclick = function () {
-    var mySrc = gasBolierImageM.getAttribute('src');
-    if (mySrc === '/gasboiler_off.png') {
+    var mySrcM = gasBolierImageM.getAttribute('src');
+    if (mySrcM === '/gasboiler_off.png') {
       gasBolierImageM.setAttribute('src', '/gasboiler_on.png');
       heatTechnology = 'gas';
     }
