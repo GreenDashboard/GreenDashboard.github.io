@@ -1266,7 +1266,7 @@ window.onload = function () {
   detachedImageM.onclick = function () {
     getCostsM()
     var mySrc = detachedImageM.getAttribute('src');
-    if (mySrc === '/detached_off.png') {
+    if (mySrc == '/detached_off.png') {
       detachedImageM.setAttribute('src', '/detached_on.png');
       houseType = 'detached';
     }
@@ -1276,7 +1276,7 @@ window.onload = function () {
   }
   semidetachedImageM.onclick = function () {
     var mySrc = semidetachedImageM.getAttribute('src');
-    if (mySrc === '/semidetached_off.png') {
+    if (mySrc == '/semidetached_off.png') {
       semidetachedImageM.setAttribute('src', '/semidetached_on.png');
       houseType = 'semidetached';
     }
@@ -1286,7 +1286,7 @@ window.onload = function () {
   }
   terracedImageM.onclick = function () {
     var mySrc = terracedImageM.getAttribute('src');
-    if (mySrc === '/terraced_off.png') {
+    if (mySrc == '/terraced_off.png') {
       terracedImageM.setAttribute('src', '/terraced_on.png');
       houseType = 'terraced';
     }
