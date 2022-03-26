@@ -1272,6 +1272,7 @@ window.onload = function () {
     }
     semidetachedImageM.setAttribute('src', '/semidetached_off.png')
     terracedImageM.setAttribute('src', '/terraced_off.png')
+    console.log(detachedImageM.getAttribute('src'))
   }
   semidetachedImageM.onclick = function () {
     var mySrc = semidetachedImageM.getAttribute('src');
