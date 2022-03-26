@@ -1138,7 +1138,7 @@ window.onload = function () {
       },
     }
   });
-  function updatePlots() {
+  function updatePlotsM() {
     updateBarChart(barChart5M, barChart10M, barChart20M)
 
 
