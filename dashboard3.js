@@ -1247,7 +1247,7 @@ window.onload = function () {
     return installedDiscount
   }
 
-
+  
   solarThermalM.onclick = function () {
     getCostsM()
     solarValue = rangeSlider.value;
