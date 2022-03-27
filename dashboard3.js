@@ -1769,7 +1769,6 @@ var months = [
   "December",
 ]
 
-document.getElementById("5 Years").click();
 function openCity(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -1793,7 +1792,6 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 
-document.getElementById("5 YearsM").click();
 function openCityM(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
