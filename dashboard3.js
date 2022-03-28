@@ -1126,7 +1126,7 @@ window.onload = function () {
     document.getElementById('installationCostM').innerText = 'Installation cost: £' + Math.floor(installationCost)
     document.getElementById('availableSubsidiesM').innerText = 'Available subsidies: £' + Math.floor(availableSubsidies)
     document.getElementById('costToYouM').innerText = 'Upfront cost to you: £' + Math.floor(costToYou)
-    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.floor(Math.sum(houseCosts[houseID[getHouseID()]]))
+    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.floor(houseCosts[houseID[getHouseID()]].reduce((partialSum, a) => partialSum + a, 0)/100)
     return installedDiscount
   }
 
