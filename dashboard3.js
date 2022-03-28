@@ -617,6 +617,32 @@ window.onload = function () {
     let houseConditions = houseType.concat(people.concat(solarPV.concat(St.concat(heatTechnology))))
     return houseConditions
   }
+  getHouseIDM = function () {
+
+
+    if (peopleNumber4M.getAttribute('src') == 'images/4people_on.png') {
+      people = '4';
+    } else {
+      people = '2';
+    }
+    if (detachedImageM.getAttribute('src') == 'images/detached_on.png') {
+      houseType = 'detached'
+    } else if (semidetachedImageM.getAttribute('src') == 'images/semidetached_on.png') {
+      houseType = 'semidetached'
+    } else {
+      houseType = 'terrace'
+    }
+    solarPV = rangeSliderM.value;
+
+    if (solarThermalM.checked) {
+      St = 'ST';
+    } else {
+      St = 'NST';
+    }
+
+    let houseConditions = houseType.concat(people.concat(solarPV.concat(St.concat(heatTechnology))))
+    return houseConditions
+  }
 
   function getCosts() {
     installationCost = 0
@@ -1125,13 +1151,15 @@ window.onload = function () {
     document.getElementById('installationCostM').innerText = 'Installation cost: £' + Math.floor(installationCost)
     document.getElementById('availableSubsidiesM').innerText = 'Available subsidies: £' + Math.floor(availableSubsidies)
     document.getElementById('costToYouM').innerText = 'Upfront cost to you: £' + Math.floor(costToYou)
-    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.floor(houseCosts[houseID[getHouseID()]].reduce((partialSum, a) => partialSum + a, 0)/100)
+    console.log(houseID[getHouseID()])
+    var sum1 = houseCosts[houseID[getHouseIDM()]].reduce((partialSum, a) => partialSum + a, 0)/100
+    var sum2 = houseCosts[houseID[baseID]].reduce((partialSum, a) => partialSum + a, 0)/100
+    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.floor(sum2-sum1)
     return installedDiscount
   }
 
 
   solarThermalM.onclick = function () {
-    getCostsM()
     solarValue = rangeSlider.value;
     pathBegin = '/terrace_PV';
     if (solarThermalM.checked) {
@@ -1143,10 +1171,10 @@ window.onload = function () {
     add = Math.ceil(solarValue / 2).toString()
     pathEnd = '.png'
     newSrc = pathBegin.concat(add.concat(pathEnd))
+    getCostsM()
 
   }
   detachedImageM.onclick = function () {
-    getCostsM()
     var mySrcM = detachedImageM.getAttribute('src');
     console.log(mySrcM)
     if (mySrcM = '/detached_off.png') {
@@ -1157,6 +1185,7 @@ window.onload = function () {
     semidetachedImageM.setAttribute('src', '/semidetached_off.png')
     terracedImageM.setAttribute('src', '/terraced_off.png')
     console.log(detachedImageM.getAttribute('src'))
+    getCostsM()
   }
   semidetachedImageM.onclick = function () {
     var mySrcM = semidetachedImageM.getAttribute('src');
