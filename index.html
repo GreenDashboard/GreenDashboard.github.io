@@ -17,8 +17,8 @@
     window.define = undefined;
     window.require = undefined;
   </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   <script>
     window.define = window.__define;
     window.require = window.__require;
@@ -138,7 +138,7 @@
         <div class="tab">
           <button class="tablinks" onclick="openCity(event, '5 Years')" id="defaultOpen">5 Years</button>
           <button class="tablinks" onclick="openCity(event, '10 Years')" id="open2">10 Years</button>
-          <button class="tablinks" onclick="openCity(event, '20 Years')" id="open3">20 Years</button>
+          <button class="tablinks" onclick="openCity(event, '15 Years')" id="open3">15 Years</button>
         </div>
 
         <!-- Tab content -->
@@ -150,7 +150,7 @@
           <canvas id="10Year" style="width:100%;height:95%"></canvas>
         </div>
 
-        <div id="20 Years" class="tabcontent">
+        <div id="15 Years" class="tabcontent">
           <canvas id="20Year" style="width:100%;height:95%"></canvas>
         </div>
       </div>
@@ -239,7 +239,7 @@
       display: grid
     }
 
-    @media (max-width:600px) {
+    @media (max-width:6000px) {
       .desktop-display {
         display: none
       }
@@ -264,49 +264,40 @@
       <img style="width: 30%; margin-left: auto;  margin-right: auto; " src="images/4people_off.png" id="4peopleM">
       <br>
       <div class="slidecontainer">
-        <h2 style="width: max-content;">Installed Solar PV: <span id="demoM"></span> kWp</h2>
+        <h3 style="width: max-content;">Installed Solar PV: <span id="demoM"></span> kWp</h3>
         <input style="margin-left: 5%; width: 90%" type="range" min="0" max="5" value="0" step="1" class="rangeslider"
           id="myRangeM">
       </div>
       <br>
-      <h2>&nbsp; PV Panels already installed?
+      <h3>&nbsp; PV Panels already installed?
         <label class="switch" style="width: 60px; float: right;">
           <input type="checkbox" id="PVInstM">
           <span class="slider round"></span>
         </label>
-      </h2>
-      <h2>&nbsp; Solar Thermal
+      </h3>
+      <h3>&nbsp; Solar Thermal
         <label class="switch" style="width: 60px; float: right;">
           <input type="checkbox" id="solarThermalM">
           <span class="slider round"></span>
         </label>
-      </h2>
-      <h2>&nbsp; ST Panels already installed?
+      </h3>
+      <h3>&nbsp; ST Panels already installed?
         <label class="switch" style="width: 60px; float: right;">
           <input type="checkbox" id="solarThermalInstM">
           <span class="slider round"></span>
         </label>
-      </h2>
+      </h3>
       <br>
       <img style="width: 35%; margin-left: 15%;" src="images/ashp_off.png" id="ashpM">
       <img style="width: 35%; " src="images/gasboiler_on.png" id="gasM">
       <br>
 
 
-      <h3 style="margin-left: 27%; margin-bottom:10px"> Installation cost: </h3>
-      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='installationCostM'>
-      </h1>
+      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='installationCostM'></h1>
 
-      <h3 style="margin-left: 20%; margin-bottom:10px"> Available subsidies: </h3>
-      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element'
-        id='availableSubsidiesM'>
-      </h1>
-      <h3 style="margin-left: 27%; margin-bottom:10px"> Initial cost to you: </h3>
-      <h1 style="margin-left: 17%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYouM'>
-      </h1>
-      <h3 style="margin-left: 27%; margin-bottom:10px"> Total financial saving after 20 Years: </h3>
-      <h1 style="margin-left: 17%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYou20M'>
-      </h1>
+      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='availableSubsidiesM'></h1>
+      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='costToYouM'></h1>
+      <h1 style="margin-left: 25%; font-size:50px; margin-top:0; padding:0;" className='element' id='energySave'></h1>
       
       <button id="myBtnM" class="button"
       style="width: 30%;  margin-left: 18%; background-color: #003f5c;">Info</button>
@@ -382,24 +373,7 @@
         </div>
       </div>
 
-      <div class="tabM">
-        <button class="tablinks" onclick="openCityM(event, '5 YearsM')" id="defaultOpenM">5 Years</button>
-        <button class="tablinks" onclick="openCityM(event, '10 YearsM')" id="open2M">10 Years</button>
-        <button class="tablinks" onclick="openCityM(event, '20 YearsM')" id="open3M">20 Years</button>
-      </div>
-
-      <!-- Tab content -->
-      <div id="5 YearsM" class="tabcontentM">
-        <canvas id="5YearM" style="width:100%;height:400px"></canvas>
-      </div>
-
-      <div id="10 YearsM" class="tabcontentM">
-        <canvas id="10YearM" style="width:100%;height:400px"></canvas>
-      </div>
-
-      <div id="20 YearsM" class="tabcontentM">
-        <canvas id="20YearM" style="width:100%;height:400px"></canvas>
-      </div>
+      
     </div>
 
     </div>
