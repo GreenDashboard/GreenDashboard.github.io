@@ -784,6 +784,10 @@ window.onload = function () {
   }
 
   rangeSlider.onclick = function () {
+    PVInst.disabled = false;
+    if (rangeSlider.value == 0){
+      PVInst.disabled = true;
+    }
     getCosts()
   }
 
