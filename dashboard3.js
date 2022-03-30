@@ -1150,7 +1150,7 @@ window.onload = function () {
       houseType = 'semidetached'
     } else {
       houseType = 'terrace'
-    }
+    }  
     availableSubsidies = Math.min(5000, 0.66 * availableSubsidies)
     baseID = houseType + people + "0NSTgas"
     costToYou = installationCost - availableSubsidies
