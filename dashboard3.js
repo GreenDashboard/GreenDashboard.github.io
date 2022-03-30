@@ -571,8 +571,8 @@ window.onload = function () {
     },
     'solar thermal installation': 2630,
     'ashp': {
-      '2': 8555,
-      '4': 9127
+      '2': 8600,
+      '4': 9100
     },
     'gas': 2100,
   }
