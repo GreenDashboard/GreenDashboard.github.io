@@ -620,14 +620,14 @@ window.onload = function () {
   getHouseIDM = function () {
 
 
-    if (peopleNumber4M.getAttribute('src') == 'images/4people_on.png') {
-      people = '4';
+    if (peopleNumber4M.getAttribute('src') == '/4people_on.png') {
+      peopleM = '4';
     } else {
-      people = '2';
+      peopleM = '2';
     }
-    if (detachedImageM.getAttribute('src') == 'images/detached_on.png') {
+    if (detachedImageM.getAttribute('src') == '/detached_on.png') {
       houseType = 'detached'
-    } else if (semidetachedImageM.getAttribute('src') == 'images/semidetached_on.png') {
+    } else if (semidetachedImageM.getAttribute('src') == '/semidetached_on.png') {
       houseType = 'semidetached'
     } else {
       houseType = 'terrace'
@@ -639,8 +639,7 @@ window.onload = function () {
     } else {
       St = 'NST';
     }
-
-    let houseConditions = houseType.concat(people.concat(solarPV.concat(St.concat(heatTechnology))))
+    let houseConditions = houseType.concat(peopleM.concat(solarPV.concat(St.concat(heatTechnology))))
     return houseConditions
   }
 
@@ -1145,17 +1144,22 @@ window.onload = function () {
     if (heatTechnology == 'gas') {
       installationCost += costs['gas'];
     }
-
+    if (detachedImage.getAttribute('src') == 'detached_on.png') {
+      houseType = 'detached'
+    } else if (semidetachedImage.getAttribute('src') == 'semidetached_on.png') {
+      houseType = 'semidetached'
+    } else {
+      houseType = 'terrace'
+    }
     availableSubsidies = Math.min(5000, 0.66 * availableSubsidies)
-
+    baseID = houseType + people + "0NSTgas"
     costToYou = installationCost - availableSubsidies
     document.getElementById('installationCostM').innerText = 'Installation cost: £' + Math.floor(installationCost)
     document.getElementById('availableSubsidiesM').innerText = 'Available subsidies: £' + Math.floor(availableSubsidies)
     document.getElementById('costToYouM').innerText = 'Upfront cost to you: £' + Math.floor(costToYou)
-    console.log(houseID[getHouseID()])
     var sum1 = houseCosts[houseID[getHouseIDM()]].reduce((partialSum, a) => partialSum + a, 0)/100
     var sum2 = houseCosts[houseID[baseID]].reduce((partialSum, a) => partialSum + a, 0)/100
-    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.floor(sum2-sum1)
+    document.getElementById('energySave').innerText = 'Yearly energy saving: £' + Math.abs(Math.floor(sum2-sum1))
     return installedDiscount
   }
 
